@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mohammed Al Badri | Cybersecurity Portfolio</title>
+  <title>Mohammed Al Badri | Portfolio</title>
 
   <!-- SEO Meta -->
   <meta name="description" content="Cybersecurity portfolio of Mohammed Al Badri - CV, skills, projects, certifications." />
@@ -76,6 +76,7 @@
     nav a {
       color: var(--accent);
       margin-left: 1.5rem;
+      margin-right: 1rem; /* Added margin right to separate from theme toggle */
       text-decoration: none;
       font-weight: 700;
       position: relative;
@@ -91,6 +92,11 @@
     nav a.active {
       text-decoration: underline;
       color: #ffffff;
+    }
+
+    body.light nav a.active {
+      color: #000000; /* black active link in light mode */
+      text-decoration: underline;
     }
 
     /* Theme Toggle */
@@ -369,7 +375,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Mohammed Al Badri | Cybersecurity Portfolio | 
+    &copy; 2025 Mohammed Al Badri | Portfolio | 
     <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
       <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
         <title>LinkedIn</title>
