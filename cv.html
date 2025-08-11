@@ -331,6 +331,25 @@
         display: flex;
       }
     }
+
+    /* Added CV Download Link styles */
+    .download-link {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .download-link:hover,
+    .download-link:focus {
+      background-color: #3b3bbd;
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -357,7 +376,13 @@
   </header>
 
   <main class="container">
-SOON
+    <section class="cv-download">
+      <h2>Download My CV</h2>
+      <p>You can download my CV in Word format by clicking the link below:</p>
+      <a href="Mohammed%20Al%20Badri%20-%20CV.docx" download target="_blank" rel="noopener noreferrer" class="download-link">
+        Download CV (DOCX)
+      </a>
+    </section>
   </main>
 
   <footer>
