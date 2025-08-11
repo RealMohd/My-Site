@@ -76,7 +76,7 @@
     nav a {
       color: var(--accent);
       margin-left: 1.5rem;
-      margin-right: 1rem; /* Added margin right to separate from theme toggle */
+      margin-right: 1rem; /* space from theme toggle */
       text-decoration: none;
       font-weight: 700;
       position: relative;
@@ -160,108 +160,23 @@
       animation: fadeIn 0.5s ease forwards;
     }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      margin-top: 4rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 0.8rem;
-      margin-bottom: 0.8rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Contact Section */
-    .contact {
-      margin-top: 4rem;
-      text-align: center;
-      animation: fadeIn 0.5s ease forwards;
-      animation-delay: 0.2s;
-    }
-
-    .contact h2 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-      font-weight: 700;
-      font-size: 1.8rem;
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact a {
-      color: var(--accent);
-      font-size: 1.2rem;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .contact a:hover,
-    .contact a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-
-    .contact button {
-      background: var(--accent);
+    /* Download button style */
+    .download-link {
+      display: inline-block;
+      background-color: var(--accent);
       color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
+      padding: 0.7rem 1.2rem;
       border-radius: 5px;
-      cursor: pointer;
       font-weight: 700;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact button:hover,
-    .contact button:focus {
-      background-color: #3b3bbd;
-      outline: none;
-    }
-
-    /* Copy message style */
-    #copy-message {
-      color: var(--accent);
-      margin-top: 0.5rem;
-      font-weight: 700;
-      height: 1.2rem;
-      min-height: 1.2rem;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: var(--card-bg-dark);
-      font-size: 0.9rem;
-      margin-top: 4rem;
-    }
-
-    .social-link {
-      color: var(--accent);
       text-decoration: none;
-      vertical-align: middle;
-      transition: color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      text-align: center;
     }
 
-    .social-link:hover,
-    .social-link:focus {
-      color: #3b3bbd;
+    .download-link:hover,
+    .download-link:focus {
+      background-color: #3b3bbd;
       outline: none;
     }
 
@@ -331,25 +246,6 @@
         display: flex;
       }
     }
-
-    /* Added CV Download Link styles */
-    .download-link {
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 5px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .download-link:hover,
-    .download-link:focus {
-      background-color: #3b3bbd;
-      outline: none;
-    }
   </style>
 </head>
 <body>
@@ -376,10 +272,20 @@
   </header>
 
   <main class="container">
-    <section class="cv-download">
-      <h2>Download My CV</h2>
-      <p>You can download my CV in Word format by clicking the link below:</p>
-      <a href="Mohammed%20Al%20Badri%20-%20CV.docx" download target="_blank" rel="noopener noreferrer" class="download-link">
+    <section class="cv-display">
+      <h2>My CV</h2>
+
+      <!-- Embedded PDF preview -->
+      <iframe 
+        src="Mohammed%20Al%20Badri%20-%20CV.pdf" 
+        width="100%" 
+        height="700" 
+        style="border:1px solid #ccc; border-radius:5px;" 
+        aria-label="CV preview">
+      </iframe>
+
+      <!-- Download button -->
+      <a href="Mohammed%20Al%20Badri%20-%20CV.docx" download target="_blank" rel="noopener noreferrer" class="download-link" >
         Download CV (DOCX)
       </a>
     </section>
@@ -405,25 +311,6 @@
     const toggle = document.getElementById('theme-toggle');
     toggle.addEventListener('change', () => {
       document.body.classList.toggle('light');
-    });
-
-    const copyBtn = document.getElementById('copy-email-btn');
-    const copyMsg = document.getElementById('copy-message');
-
-    function clearMessage() {
-      copyMsg.textContent = '';
-    }
-
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('info@RealMohd.Engineer')
-        .then(() => {
-          copyMsg.textContent = '📧 Email copied to clipboard!';
-          setTimeout(clearMessage, 3000);
-        })
-        .catch(() => {
-          copyMsg.textContent = '⚠️ Failed to copy email.';
-          setTimeout(clearMessage, 3000);
-        });
     });
 
     // Hamburger menu toggle
